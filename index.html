@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mahmoud Mohamed Adam Abdalla</title>
+<meta name="description" content="Portfolio of Mahmoud Mohamed Adam Abdalla, Information Technology (Data Science) student at City University Malaysia.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#14213d;--navy2:#1c2c4f;--caramel:#c68b4e;--caramel-d:#9a6530;--cream:#faf6ee;--ink:#1b2438;--muted:#5f6779;--line:#e6dccb}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);line-height:1.7;font-size:16px;background:#fff}
+a{color:inherit}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:rgba(20,33,61,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(198,139,78,.25)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:'Playfair Display',serif;font-size:21px;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo i{font-style:normal;width:34px;height:34px;display:grid;place-items:center;background:var(--caramel);color:var(--navy);font-weight:700;font-size:17px}
+.menu{display:flex;gap:6px;list-style:none;align-items:center}
+.menu a{display:block;padding:8px 14px;color:#d8d3c8;text-decoration:none;font-size:14.5px;font-weight:500;border-bottom:2px solid transparent}
+.menu a:hover,.menu a.on{color:#fff;border-bottom-color:var(--caramel)}
+.menu a.cta{background:var(--caramel);color:var(--navy);border:0;margin-left:8px;font-weight:600}
+.menu a.cta:hover{background:#d49a5c}
+.burger{display:none;background:none;border:1.5px solid var(--caramel);color:var(--caramel);padding:6px 12px;font:inherit;font-size:14px;cursor:pointer}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;padding:84px 0 96px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border:60px solid rgba(198,139,78,.08);border-radius:50%}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:64px;align-items:center;position:relative;z-index:1}
+.eyebrow{color:var(--caramel);letter-spacing:.16em;text-transform:uppercase;font-weight:600;font-size:13px;margin-bottom:16px}
+.hero h1{font-size:clamp(36px,5.2vw,58px);line-height:1.1;margin-bottom:20px}
+.hero h1 span{color:var(--caramel)}
+.hero p.lead{color:#d8d3c8;font-size:18px;max-width:560px;margin-bottom:30px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 28px;font-weight:600;font-size:15px;text-decoration:none;border:2px solid var(--caramel);transition:.2s}
+.btn.fill{background:var(--caramel);color:var(--navy)}
+.btn.fill:hover{background:#d49a5c;border-color:#d49a5c}
+.btn.line{color:var(--caramel)}
+.btn.line:hover{background:rgba(198,139,78,.14)}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px}
+.badges span{font-size:13.5px;color:#e8e3d9;border:1px solid rgba(255,255,255,.2);padding:5px 14px}
+.photo{aspect-ratio:1/1;border:3px solid var(--caramel);box-shadow:14px 14px 0 rgba(198,139,78,.25);background:#e9e9ee;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 10%;display:block}
+
+/* SECTIONS */
+section{padding:84px 0}
+section.tint{background:var(--cream)}
+.head{margin-bottom:44px}
+.head small{color:var(--caramel-d);font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:13px}
+.head h2{font-size:38px;color:var(--navy);margin-top:6px}
+.head h2::after{content:"";display:block;width:56px;height:4px;background:var(--caramel);margin-top:14px}
+
+/* ABOUT */
+.about{display:grid;grid-template-columns:1.5fr 1fr;gap:56px}
+.about p{color:#39435a;margin-bottom:14px}
+.info{border:1px solid var(--line);background:var(--cream)}
+.info div{display:flex;justify-content:space-between;gap:16px;padding:14px 20px;border-bottom:1px solid var(--line);font-size:15px}
+.info div:last-child{border:0}
+.info dt{color:var(--muted)}
+.info dd{font-weight:600;color:var(--navy);text-align:right}
+
+/* SKILLS */
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.sk{background:#fff;border:1px solid var(--line);border-top:4px solid var(--caramel);padding:24px}
+.sk h3{font-size:19px;color:var(--navy);margin-bottom:14px}
+.sk ul{list-style:none}
+.sk li{padding:5px 0 5px 18px;position:relative;color:#39435a;font-size:15px}
+.sk li::before{content:"";position:absolute;left:0;top:14px;width:6px;height:6px;background:var(--caramel);transform:rotate(45deg)}
+
+/* PROJECTS */
+.projects{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.pr{background:#fff;border:1px solid var(--line);padding:30px;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s,border-color .25s}
+.pr:hover{transform:translateY(-5px);box-shadow:0 18px 36px rgba(20,33,61,.12);border-color:var(--caramel)}
+.pr.big{grid-column:1/-1;background:var(--navy);border-color:var(--navy);color:#fff}
+.pr.big:hover{border-color:var(--caramel)}
+.status{align-self:flex-start;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--caramel-d);background:#f7efe3;padding:3px 12px;margin-bottom:14px}
+.big .status{background:rgba(198,139,78,.18);color:var(--caramel)}
+.pr h3{font-size:25px;color:var(--navy);margin-bottom:10px}
+.big h3{color:#fff;font-size:29px}
+.pr p{color:#39435a}
+.big p{color:#d8d3c8}
+.pr ul{margin:12px 0 0 18px;color:#39435a;font-size:15px}
+.big ul{color:#d8d3c8}
+.tech{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.tech span{font-size:12.5px;font-weight:600;border:1px solid var(--line);padding:3px 11px;color:var(--navy)}
+.big .tech span{border-color:rgba(255,255,255,.25);color:#fff}
+.pr a.go{margin-top:auto;padding-top:18px;color:var(--caramel-d);font-weight:600;text-decoration:none}
+.big a.go{color:var(--caramel)}
+.pr a.go:hover{text-decoration:underline}
+
+/* EDUCATION */
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.card{background:#fff;border:1px solid var(--line);border-left:5px solid var(--caramel);padding:28px}
+.card h3{font-size:22px;color:var(--navy);margin-bottom:4px}
+.card .when{color:var(--caramel-d);font-weight:600;font-size:14px;margin-bottom:8px}
+.card p{color:#39435a}
+.big-num{font-family:'Playfair Display',serif;font-size:54px;color:var(--navy);line-height:1}
+.big-num small{font-size:20px;color:var(--muted)}
+
+/* SOFT */
+.soft{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.so{background:#fff;border:1px solid var(--line);padding:24px}
+.so b{display:block;font-family:'Playfair Display',serif;font-size:19px;color:var(--navy);margin-bottom:6px}
+.so p{color:#39435a;font-size:15px}
+
+/* CONTACT */
+.contact{background:var(--navy);color:#fff;text-align:center}
+.contact .head h2{color:#fff}
+.contact .head h2::after{margin:14px auto 0}
+.contact p{color:#d8d3c8;max-width:560px;margin:0 auto 34px}
+.ways{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
+.way{border:1px solid rgba(198,139,78,.5);padding:20px 30px;min-width:260px;text-decoration:none}
+.way:hover{background:rgba(198,139,78,.12)}
+.way small{display:block;color:var(--caramel);letter-spacing:.12em;text-transform:uppercase;font-size:12px;font-weight:600}
+.way span{font-size:16px;word-break:break-all}
+footer{background:#0e1730;color:#8f99ad;text-align:center;padding:20px;font-size:14px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .hero .wrap,.about,.projects,.edu{grid-template-columns:1fr}
+  .skills,.soft{grid-template-columns:1fr 1fr}
+  .photo{max-width:320px;order:-1}
+  .hero{padding:52px 0 64px}
+  section{padding:60px 0}
+  .burger{display:block}
+  .menu{display:none;position:absolute;top:68px;left:0;right:0;background:var(--navy);flex-direction:column;padding:12px 28px 20px;align-items:stretch}
+  .menu.open{display:flex}
+  .menu a.cta{margin:8px 0 0;text-align:center}
+}
+@media(max-width:560px){.skills,.soft{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="logo" href="#home"><i>M</i>Mahmoud Abdalla</a>
+  <button class="burger" id="burger" aria-label="Menu">Menu</button>
+  <ul class="menu" id="menu">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#soft">Soft Skills</a></li>
+    <li><a class="cta" href="#contact">Contact</a></li>
+  </ul>
+</div></nav>
+
+<header class="hero" id="home"><div class="wrap">
+  <div>
+    <div class="eyebrow">Information Technology, Data Science</div>
+    <h1>Mahmoud Mohamed <span>Adam Abdalla</span></h1>
+    <p class="lead">Final year IT student building data driven web and mobile applications, from database design and APIs to the user interface. Looking for an internship or graduate role in data engineering, data science or AI.</p>
+    <div class="hero-btns">
+      <a class="btn fill" href="#projects">View my projects</a>
+      <a class="btn line" href="#contact">Get in touch</a>
+    </div>
+    <div class="badges"><span>City University Malaysia</span><span>Graduating July 2027</span><span>Sudanese, based in Malaysia</span></div>
+  </div>
+  <div class="photo"><img src="photo.jpg" alt="Mahmoud Mohamed Adam Abdalla"></div>
+</div></header>
+
+<section id="about"><div class="wrap">
+  <div class="head rv"><small>01 About</small><h2>Profile</h2></div>
+  <div class="about rv">
+    <div>
+      <p>I am a final year Information Technology student specializing in Data Science at City University Malaysia. My work covers the full path of an application: designing databases, building APIs, and delivering interfaces for web and mobile.</p>
+      <p>My current focus is SkillBridge, my final year project, an AI powered graduate placement platform. I am also building my skills in data engineering with SQL, PySpark and Databricks, and my long term goal is a career in data engineering and AI, ideally in Saudi Arabia.</p>
+    </div>
+    <dl class="info">
+      <div><dt>Full name</dt><dd>Mahmoud Mohamed Adam Abdalla</dd></div>
+      <div><dt>Age</dt><dd>22</dd></div>
+      <div><dt>Nationality</dt><dd>Sudanese</dd></div>
+      <div><dt>Location</dt><dd>Malaysia</dd></div>
+      <div><dt>Languages</dt><dd>Arabic, English</dd></div>
+    </dl>
+  </div>
+</div></section>
+
+<section id="skills" class="tint"><div class="wrap">
+  <div class="head rv"><small>02 Skills</small><h2>Technical skills</h2></div>
+  <div class="skills rv">
+    <div class="sk"><h3>Data</h3><ul><li>Python</li><li>SQL (PostgreSQL)</li><li>PySpark</li></ul></div>
+    <div class="sk"><h3>Development</h3><ul><li>FastAPI</li><li>Supabase</li><li>Next.js</li><li>Flutter</li><li>HTML, CSS, JavaScript</li><li>Java</li></ul></div>
+    <div class="sk"><h3>Tools</h3><ul><li>VS Code</li><li>Power BI</li><li>KNIME</li><li>Databricks</li><li>Git &amp; GitHub</li><li>Figma</li></ul></div>
+    <div class="sk"><h3>Languages</h3><ul><li>Arabic: Native</li><li>English: Working proficiency</li></ul></div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <div class="head rv"><small>03 Work</small><h2>Projects</h2></div>
+  <div class="projects">
+
+    <article class="pr big rv">
+      <span class="status">Final Year Project, in progress</span>
+      <h3>SkillBridge, AI Graduate Placement Platform</h3>
+      <p>A platform connecting students, universities and companies. Universities nominate their own graduates for jobs and internships, and AI ranks the candidates by how well their skills match.</p>
+      <ul>
+        <li>Designed a relational database with 37 tables and an interactive prototype with 30 screens</li>
+        <li>Developing the backend with FastAPI and Supabase, and a Flutter app for Android and web</li>
+      </ul>
+      <div class="tech"><span>FastAPI</span><span>PostgreSQL</span><span>Supabase</span><span>Flutter</span></div>
+      <a class="go" href="https://github.com/mahmmedmahmood111-svg" target="_blank" rel="noopener">View on GitHub</a>
+    </article>
+
+    <article class="pr rv">
+      <span class="status">Live website</span>
+      <h3>Miss Nno</h3>
+      <p>A bilingual (Arabic and English) online cosmetics store with multi currency pricing, product search, cart, checkout, order tracking and a seller admin panel.</p>
+      <div class="tech"><span>Next.js</span><span>Supabase</span><span>Vercel</span></div>
+      <a class="go" href="https://miss-nno.vercel.app" target="_blank" rel="noopener">Visit the website</a>
+    </article>
+
+    <article class="pr rv">
+      <span class="status">Group project</span>
+      <h3>Flight Data Analysis</h3>
+      <p>Analysis of a flight passenger dataset using PySpark in Google Colab.</p>
+      <div class="tech"><span>PySpark</span><span>Python</span><span>Google Colab</span></div>
+    </article>
+
+    <article class="pr rv">
+      <span class="status">Prototype</span>
+      <h3>MediConnect</h3>
+      <p>An interactive prototype with 9 screens of a healthcare appointment app for patients and doctors, developed for a mobile app development course.</p>
+      <div class="tech"><span>UI/UX</span><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+    </article>
+
+  </div>
+</div></section>
+
+<section id="education" class="tint"><div class="wrap">
+  <div class="head rv"><small>04 Education</small><h2>Education</h2></div>
+  <div class="edu rv">
+    <div class="card">
+      <h3>Bachelor of Information Technology</h3>
+      <div class="when">Data Science specialization, expected July 2027</div>
+      <p>City University Malaysia</p>
+    </div>
+    <div class="card">
+      <div class="when">CGPA</div>
+      <div class="big-num">2.98 <small>/ 4.00</small></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="soft"><div class="wrap">
+  <div class="head rv"><small>05 Strengths</small><h2>Soft skills</h2></div>
+  <div class="soft rv">
+    <div class="so"><b>Teamwork</b><p>Experience in group projects with clearly owned roles.</p></div>
+    <div class="so"><b>Problem solving</b><p>Methodical debugging, one step at a time.</p></div>
+    <div class="so"><b>Adaptability</b><p>Learns new tools quickly by applying them to real projects.</p></div>
+    <div class="so"><b>Communication</b><p>Bilingual; prepares reports and presentations in English.</p></div>
+  </div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+  <div class="head rv"><small style="color:var(--caramel)">06 Contact</small><h2>Get in touch</h2></div>
+  <p class="rv">I am open to internships and graduate opportunities in data engineering, data science and AI.</p>
+  <div class="ways rv">
+    <div class="way"><small>Email</small><span>mahmmedmahmood111@gmail.com</span></div>
+    <a class="way" href="https://github.com/mahmmedmahmood111-svg" target="_blank" rel="noopener"><small>GitHub</small><span>github.com/mahmmedmahmood111-svg</span></a>
+  </div>
+</div></section>
+
+<footer>© 2026 Mahmoud Mohamed Adam Abdalla</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('burger'),m=document.getElementById('menu');
+  b.addEventListener('click',function(){m.classList.toggle('open')});
+  m.addEventListener('click',function(e){if(e.target.tagName==='A')m.classList.remove('open')});
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
+    els.forEach(function(e){io.observe(e)});
+  }else{els.forEach(function(e){e.classList.add('in')})}
+  var links=document.querySelectorAll('.menu a[href^="#"]:not(.cta)');
+  var secs=[].map.call(links,function(a){return document.querySelector(a.getAttribute('href'))});
+  window.addEventListener('scroll',function(){
+    var y=window.scrollY+120,cur=-1;
+    secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i});
+    links.forEach(function(a,i){a.classList.toggle('on',i===cur)});
+  },{passive:true});
+})();
+</script>
+</body>
+</html>
